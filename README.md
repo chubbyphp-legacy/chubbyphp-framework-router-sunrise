@@ -2,10 +2,10 @@
 
 [![Build Status](https://api.travis-ci.org/chubbyphp/chubbyphp-framework-router-sunrise.png?branch=master)](https://travis-ci.org/chubbyphp/chubbyphp-framework-router-sunrise)
 [![Coverage Status](https://coveralls.io/repos/github/chubbyphp/chubbyphp-framework-router-sunrise/badge.svg?branch=master)](https://coveralls.io/github/chubbyphp/chubbyphp-framework-router-sunrise?branch=master)
+[![Latest Stable Version](https://poser.pugx.org/chubbyphp/chubbyphp-framework-router-sunrise/v/stable.png)](https://packagist.org/packages/chubbyphp/chubbyphp-framework-router-sunrise)
 [![Total Downloads](https://poser.pugx.org/chubbyphp/chubbyphp-framework-router-sunrise/downloads.png)](https://packagist.org/packages/chubbyphp/chubbyphp-framework-router-sunrise)
 [![Monthly Downloads](https://poser.pugx.org/chubbyphp/chubbyphp-framework-router-sunrise/d/monthly)](https://packagist.org/packages/chubbyphp/chubbyphp-framework-router-sunrise)
-[![Latest Stable Version](https://poser.pugx.org/chubbyphp/chubbyphp-framework-router-sunrise/v/stable.png)](https://packagist.org/packages/chubbyphp/chubbyphp-framework-router-sunrise)
-[![Latest Unstable Version](https://poser.pugx.org/chubbyphp/chubbyphp-framework-router-sunrise/v/unstable)](https://packagist.org/packages/chubbyphp/chubbyphp-framework-router-sunrise)
+[![Daily Downloads](https://poser.pugx.org/chubbyphp/chubbyphp-framework-router-sunrise/d/daily)](https://packagist.org/packages/chubbyphp/chubbyphp-framework-router-sunrise)
 
 ## Description
 
