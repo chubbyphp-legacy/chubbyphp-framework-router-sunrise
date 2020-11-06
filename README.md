@@ -86,5 +86,5 @@ $app->emit($app->handle((new ServerRequestFactory())->createFromGlobals()));
 Dominik Zogg 2020
 
 [1]: https://packagist.org/packages/chubbyphp/chubbyphp-framework
-[2]: https://packagist.org/packages/sunrise/router
+[2]: https://packagist.org/packages/sunrise/http-router
 [10]: https://packagist.org/packages/chubbyphp/chubbyphp-framework-router-sunrise
