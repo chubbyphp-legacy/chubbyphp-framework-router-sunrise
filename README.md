@@ -26,7 +26,7 @@ Sunrise Router implementation for [chubbyphp-framework][1].
 ## Requirements
 
  * php: ^7.2|^8.0
- * [chubbyphp/chubbyphp-framework][1]: ^3.0
+ * [chubbyphp/chubbyphp-framework][1]: ^3.2
  * [sunrise/http-router][2]: ^2.4
 
 ## Installation
