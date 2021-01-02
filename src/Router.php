@@ -22,15 +22,9 @@ use Sunrise\Http\Router\Router as SunriseRouter;
 
 final class Router implements RouterInterface
 {
-    /**
-     * @var SunriseRouter
-     */
-    private $router;
+    private SunriseRouter $router;
 
-    /**
-     * @var string
-     */
-    private $basePath;
+    private string $basePath;
 
     /**
      * @param array<int, RouteInterface> $routes
@@ -50,8 +44,9 @@ final class Router implements RouterInterface
                 $request->getMethod(),
                 $sunriseRoute->getPath(),
                 $sunriseRoute->getName(),
-                $sunriseRoute->getRequestHandler()
-            )->middlewares($sunriseRoute->getMiddlewares())->withAttributes($sunriseRoute->getAttributes());
+                $sunriseRoute->getRequestHandler(),
+                $sunriseRoute->getMiddlewares()
+            )->withAttributes($sunriseRoute->getAttributes());
         } catch (SunriseRouteNotFoundException $exception) {
             throw NotFoundException::create($request->getRequestTarget());
         } catch (SunriseMethodNotAllowedException $exception) {
