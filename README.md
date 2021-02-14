@@ -1,8 +1,8 @@
 # chubbyphp-framework-router-sunrise
 
-[![Build Status](https://api.travis-ci.org/chubbyphp/chubbyphp-framework-router-sunrise.png?branch=master)](https://travis-ci.org/chubbyphp/chubbyphp-framework-router-sunrise)
+[![CI](https://github.com/chubbyphp/chubbyphp-framework-router-sunrise/workflows/CI/badge.svg?branch=master)](https://github.com/chubbyphp/chubbyphp-framework-router-sunrise/actions?query=workflow%3ACI)
 [![Coverage Status](https://coveralls.io/repos/github/chubbyphp/chubbyphp-framework-router-sunrise/badge.svg?branch=master)](https://coveralls.io/github/chubbyphp/chubbyphp-framework-router-sunrise?branch=master)
-[![Infection MSI](https://badge.stryker-mutator.io/github.com/chubbyphp/chubbyphp-framework-router-sunrise/master)](https://travis-ci.org/chubbyphp/chubbyphp-framework-router-sunrise)
+[![Infection MSI](https://badge.stryker-mutator.io/github.com/chubbyphp/chubbyphp-framework-router-sunrise/master)](https://dashboard.stryker-mutator.io/reports/github.com/chubbyphp/chubbyphp-framework-router-sunrise/master)
 [![Latest Stable Version](https://poser.pugx.org/chubbyphp/chubbyphp-framework-router-sunrise/v/stable.png)](https://packagist.org/packages/chubbyphp/chubbyphp-framework-router-sunrise)
 [![Total Downloads](https://poser.pugx.org/chubbyphp/chubbyphp-framework-router-sunrise/downloads.png)](https://packagist.org/packages/chubbyphp/chubbyphp-framework-router-sunrise)
 [![Monthly Downloads](https://poser.pugx.org/chubbyphp/chubbyphp-framework-router-sunrise/d/monthly)](https://packagist.org/packages/chubbyphp/chubbyphp-framework-router-sunrise)
