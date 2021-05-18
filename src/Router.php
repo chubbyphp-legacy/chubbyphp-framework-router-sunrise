@@ -11,8 +11,7 @@ use Chubbyphp\Framework\Router\Exceptions\NotFoundException;
 use Chubbyphp\Framework\Router\Exceptions\NotMatchingValueForPathGenerationException;
 use Chubbyphp\Framework\Router\Route;
 use Chubbyphp\Framework\Router\RouteInterface;
-use Chubbyphp\Framework\Router\RouteMatcherInterface;
-use Chubbyphp\Framework\Router\UrlGeneratorInterface;
+use Chubbyphp\Framework\Router\RouterInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Sunrise\Http\Router\Exception\InvalidAttributeValueException as SunriseInvalidAttributeValueException;
 use Sunrise\Http\Router\Exception\MethodNotAllowedException as SunriseMethodNotAllowedException;
@@ -21,7 +20,7 @@ use Sunrise\Http\Router\Exception\RouteNotFoundException as SunriseRouteNotFound
 use Sunrise\Http\Router\RouteFactory;
 use Sunrise\Http\Router\Router as SunriseRouter;
 
-final class Router implements RouteMatcherInterface, UrlGeneratorInterface
+final class Router implements RouterInterface
 {
     private SunriseRouter $router;
 
