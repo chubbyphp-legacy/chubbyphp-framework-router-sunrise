@@ -86,10 +86,12 @@ final class Router implements RouterInterface
             throw MissingRouteByNameException::create($name);
         } catch (SunriseMissingAttributeValueException $exception) {
             $match = $exception->fromContext('match');
+
             throw MissingAttributeForPathGenerationException::create($name, $match['name']);
         } catch (SunriseInvalidAttributeValueException $exception) {
             $match = $exception->fromContext('match');
             $value = $exception->fromContext('value');
+
             throw NotMatchingValueForPathGenerationException::create(
                 $name,
                 $match['name'],
