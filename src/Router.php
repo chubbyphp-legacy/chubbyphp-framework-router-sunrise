@@ -12,10 +12,9 @@ namespace Chubbyphp\Framework\Router {
 
 namespace Chubbyphp\Framework\Router\Sunrise {
     use Chubbyphp\Framework\Router\Exceptions\MethodNotAllowedException;
-    use Chubbyphp\Framework\Router\Exceptions\MissingAttributeForPathGenerationException;
     use Chubbyphp\Framework\Router\Exceptions\MissingRouteByNameException;
     use Chubbyphp\Framework\Router\Exceptions\NotFoundException;
-    use Chubbyphp\Framework\Router\Exceptions\NotMatchingValueForPathGenerationException;
+    use Chubbyphp\Framework\Router\Exceptions\RouteGenerationException;
     use Chubbyphp\Framework\Router\Route;
     use Chubbyphp\Framework\Router\RouteInterface;
     use Chubbyphp\Framework\Router\RouterInterface;
@@ -94,16 +93,30 @@ namespace Chubbyphp\Framework\Router\Sunrise {
             } catch (SunriseMissingAttributeValueException $exception) {
                 $match = $exception->fromContext('match');
 
-                throw MissingAttributeForPathGenerationException::create($name, $match['name']);
+                $route = $this->router->getRoute($name);
+
+                throw RouteGenerationException::create(
+                    $name,
+                    $route->getPath(),
+                    $attributes,
+                    new \RuntimeException(sprintf('Missing attribute "%s"', $match['name']))
+                );
             } catch (SunriseInvalidAttributeValueException $exception) {
                 $match = $exception->fromContext('match');
                 $value = $exception->fromContext('value');
 
-                throw NotMatchingValueForPathGenerationException::create(
+                $route = $this->router->getRoute($name);
+
+                throw RouteGenerationException::create(
                     $name,
-                    $match['name'],
-                    $value,
-                    $match['pattern']
+                    $route->getPath(),
+                    $attributes,
+                    new \RuntimeException(sprintf(
+                        'Not matching value "%s" with pattern "%s" on attribute "%s"',
+                        $value,
+                        $match['pattern'],
+                        $match['name']
+                    ))
                 );
             }
 
