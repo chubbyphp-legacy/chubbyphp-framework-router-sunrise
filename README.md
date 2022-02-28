@@ -25,8 +25,8 @@ Sunrise Router implementation for [chubbyphp-framework][1].
 
 ## Requirements
 
- * php: ^7.4|^8.0
- * [chubbyphp/chubbyphp-framework][1]: ^3.6.2|^4.0@dev
+ * php: ^8.0
+ * [chubbyphp/chubbyphp-framework][1]: ^4.0
  * [psr/http-message][2]: ^1.0.1
  * [sunrise/http-router][3]: ^2.6
 
@@ -35,7 +35,7 @@ Sunrise Router implementation for [chubbyphp-framework][1].
 Through [Composer](http://getcomposer.org) as [chubbyphp/chubbyphp-framework-router-sunrise][10].
 
 ```bash
-composer require chubbyphp/chubbyphp-framework-router-sunrise "^1.2"
+composer require chubbyphp/chubbyphp-framework-router-sunrise "^1.3"
 ```
 
 ## Usage
@@ -81,7 +81,7 @@ $app->emit($app->handle((new ServerRequestFactory())->createFromGlobals()));
 
 ## Copyright
 
-Dominik Zogg 2021
+Dominik Zogg 2022
 
 [1]: https://packagist.org/packages/chubbyphp/chubbyphp-framework
 [2]: https://packagist.org/packages/psr/http-message
