@@ -4,14 +4,13 @@ declare(strict_types=1);
 
 namespace Chubbyphp\Framework\Router\Sunrise;
 
-use Chubbyphp\Framework\Router\Exceptions\MethodNotAllowedException;
 use Chubbyphp\Framework\Router\Exceptions\MissingRouteByNameException;
-use Chubbyphp\Framework\Router\Exceptions\NotFoundException;
 use Chubbyphp\Framework\Router\Exceptions\RouteGenerationException;
 use Chubbyphp\Framework\Router\Route;
 use Chubbyphp\Framework\Router\RouteInterface;
 use Chubbyphp\Framework\Router\RouteMatcherInterface;
 use Chubbyphp\Framework\Router\UrlGeneratorInterface;
+use Chubbyphp\HttpException\HttpException;
 use Psr\Http\Message\ServerRequestInterface;
 use Sunrise\Http\Router\Exception\InvalidAttributeValueException as SunriseInvalidAttributeValueException;
 use Sunrise\Http\Router\Exception\MethodNotAllowedException as SunriseMethodNotAllowedException;
@@ -45,13 +44,22 @@ final class Router implements RouteMatcherInterface, UrlGeneratorInterface
                 $sunriseRoute->getMiddlewares()
             )->withAttributes($sunriseRoute->getAttributes());
         } catch (SunriseRouteNotFoundException $exception) {
-            throw NotFoundException::create($request->getRequestTarget());
+            throw HttpException::createNotFound([
+                'detail' => sprintf(
+                    'The page "%s" you are looking for could not be found.'
+                    .' Check the address bar to ensure your URL is spelled correctly.',
+                    $request->getRequestTarget()
+                ),
+            ]);
         } catch (SunriseMethodNotAllowedException $exception) {
-            throw MethodNotAllowedException::create(
-                $request->getRequestTarget(),
-                $request->getMethod(),
-                $exception->getAllowedMethods()
-            );
+            throw HttpException::createMethodNotAllowed([
+                'detail' => sprintf(
+                    'Method "%s" at path "%s" is not allowed. Must be one of: "%s"',
+                    $request->getMethod(),
+                    $request->getRequestTarget(),
+                    implode('", "', $exception->getAllowedMethods()),
+                ),
+            ]);
         }
     }
 
